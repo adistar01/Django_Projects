@@ -1,0 +1,7 @@
+{%extends 'index.html'%}
+{% load static %}
+{% block title %}<title>Image Page</title>{%endblock%}
+{%block content%}
+<h1> extending index from Image page</h1>
+<img src="{% static 'Adi.jpg'%}" class="img-fluid" alt="Responsive image">
+{%endblock%}

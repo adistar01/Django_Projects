@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+My Blog
+{% endblock %}
+
+{% block css_files %}
+
+<link rel="stylesheet" href="{% static "Feature_Blog/post.css" %}" />
+
+<link rel="stylesheet" href="{% static "Feature_Blog/index.css" %}" />
+
+{% endblock %}
+
+{% block content %}
+
+<section id="welcome">
+    <header>
+        <img src="{% static "Feature_Blog/images/Adi.jpeg" %}" alt="Adi - Author of this blog" />
+        <h2>ADITYA'S BLOG</h2>
+    </header>
+    <p>Hi, I am Adi and I love to blog about tech and the world!</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest thoughts</h2>
+    <ul>
+        {% for post in posts %}
+        {% include "Feature_Blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>
+        I love programming, I love to help others and I enjoy exploring new technologies in general!
+    </p>
+    <p>
+        My goal is to keep growing as a developer - and if I could help you do the same, I would be very happy!
+    </p>
+</section>
+{% endblock %}
